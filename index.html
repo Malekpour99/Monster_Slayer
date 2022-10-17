@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
+    <title>Monster Slayer</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Monster Slayer</h1>
+        </header>
+        <section id="game">
+            <div class="health info">
+                <p>Monster's Health</p>
+                <div class="health-bar">
+                    <div :style="mosterHealth"></div>
+                </div>
+            </div>
+            <div class="health info player">
+                <p>Player's Health</p>
+                <div class="health-bar">
+                    <div :style="playerHealth"></div>
+                </div>
+            </div>
+            <div class="info result" v-if="winner">
+                <h3>Game Over!</h3>
+                <h3 v-if="winner === 'monster'">The monster Killed you. You lost!</h3>
+                <h3 v-else-if="winner === 'player'">You Killed the monster. You Won!</h3>
+                <h3 v-else-if="winner === 'draw'">Draw!</h3>
+                <button @click="newGame">Play again!</button>
+            </div>
+            <div class="controls" v-else>
+                <button @click="player_attack">Attack</button>
+                <button @click="special_attack" :disabled="avalableSpecial">Special Attack</button>
+                <button @click="healing">Heal</button>
+                <button @click="surrendering">Surrender</button>
+            </div>
+            <div class="log">
+                <h3>Battle Log</h3>
+                <ul>
+                    <li v-for="log in battle_log" :key="log.indes">
+                        <span>{{ log.person }}</span> - 
+                        <span :class="{'att': log.action == 'attack', 'heal': log.action == 'heal'}">{{ log.action }}</span> - 
+                        <span>{{ log.amount }}</span>
+                        <hr>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
