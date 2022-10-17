@@ -1,0 +1,150 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Jost', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    padding: 1rem;
+    background-color: crimson;
+    color: white;
+    text-align: center;
+    font-weight: 800;
+}
+
+.info {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    font-size: 1.5rem;
+    margin: 1rem auto;
+    padding: 0.125rem 1rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 60rem;
+}
+
+.health.player {
+    width: 90%;
+    max-width: 50rem;
+}
+
+.health-bar {
+    border: 1px solid rgb(0, 0, 0);
+    margin: 2rem auto;
+    height: 3rem;
+    border-radius: 0.125rem;
+}
+
+.health-bar div{
+    height: 100%;
+    background-color: #1b995e;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result button {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+    font: inherit;
+    cursor: pointer;
+    border: 1px solid #683489;
+    background-color: #683489;
+    padding: 0.75rem;
+    margin: 0 1rem 0.5rem;
+    color: white;
+    border-radius: 0.5rem;
+    min-width: 8rem;
+}
+
+.result button:hover {
+    background-color: #8F39C7;
+}
+
+.controls button {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.26);
+    font: inherit;
+    cursor: pointer;
+    border: 1px solid #9C342C;
+    background-color: #9C342C;
+    padding: 1rem;
+    margin: 0 1rem;
+    color: white;
+    border-radius: 0.5rem;
+    min-width: 10rem;
+}
+
+.controls button:last-child {
+    border: 1px solid #D3A331;
+    background-color: #D3A331;
+}
+
+.controls button:last-child:hover {
+    background-color: #F5BA30;
+}
+
+.controls button:nth-child(2) {
+    border: 1px solid #2FAE96;
+    background-color: #2FAE96;
+}
+
+.controls button:nth-child(2):hover {
+    background-color: #2BC7A9;
+}
+
+.controls button:nth-child(3) {
+    border: 1px solid #2D9A46;
+    background-color: #2D9A46;
+}
+
+.controls button:nth-child(3):hover {
+    background-color: #30BB50;
+}
+
+.controls button:hover {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
+    background-color: #C93F35;
+}
+
+.controls button:disabled {
+    border: 1px solid #7A7A7A;
+    background-color: #7A7A7A;
+}
+
+
+.controls button:disabled:hover {
+    background-color: #969696;
+}
+
+.log {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    font-size: 1.5rem;
+    margin: 1rem auto;
+    padding: 0.125rem 1rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 30rem;
+}
+
+ul li {
+   list-style: none; 
+}
+
+.att {
+    color: red;
+}
+
+.heal {
+    color: green;
+}
